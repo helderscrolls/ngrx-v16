@@ -1,4 +1,4 @@
-# NgrxV16
+# NgRx V16
 
 
 ## Development server
