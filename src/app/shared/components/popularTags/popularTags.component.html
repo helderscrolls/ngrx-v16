@@ -1,0 +1,22 @@
+<ng-container *ngIf="data$ | async as data">
+  <ngrx-v16-loading *ngIf="data.isLoading"></ngrx-v16-loading>
+
+  <ngrx-v16-error-message
+    *ngIf="data.error"
+    [message]="data.error"
+  ></ngrx-v16-error-message>
+
+  <div class="sidebar" *ngIf="data.popularTags">
+    <p>Popular Tags</p>
+
+    <div class="tag-list">
+      <a
+        class="tag-default tag-pill"
+        *ngFor="let popularTag of data.popularTags"
+        [routerLink]="['/tags', popularTag]"
+      >
+        {{ popularTag }}
+      </a>
+    </div>
+  </div>
+</ng-container>
