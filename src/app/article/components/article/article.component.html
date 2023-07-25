@@ -4,7 +4,7 @@
       <div class="container" *ngIf="data.article">
         <h1>{{ data.article.title }}</h1>
         <div class="article-meta">
-          <a [routerLink]="['/profiles', data.article.author.username]">
+          <a [routerLink]="['/profile', data.article.author.username]">
             <img
               [src]="data.article.author.image"
               alt="profile picture of article author"
@@ -12,7 +12,7 @@
           </a>
 
           <div class="info">
-            <a [routerLink]="['/profiles', data.article.author.username]">
+            <a [routerLink]="['/profile', data.article.author.username]">
               {{ data.article.author.username }}
             </a>
             <span class="date">{{ data.article.createdAt }}</span>

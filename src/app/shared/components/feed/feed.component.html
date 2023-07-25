@@ -9,7 +9,7 @@
   <div *ngIf="data.feed">
     <div class="article-preview" *ngFor="let article of data.feed.articles">
       <div class="article-meta">
-        <a [routerLink]="['/profiles', article.author.username]">
+        <a [routerLink]="['/profile', article.author.username]">
           <img
             [src]="article.author.image"
             alt="profile picture of article author"
@@ -17,14 +17,20 @@
         </a>
 
         <div class="info">
-          <a [routerLink]="['/profiles', article.author.username]">
+          <a [routerLink]="['/profile', article.author.username]">
             {{ article.author.username }}
           </a>
 
           <span class="date">{{ article.createdAt }}</span>
         </div>
 
-        <div class="pull-xs-right">ADD TO FAVORITES</div>
+        <div class="pull-xs-right">
+          <ngrx-v16-add-to-favorites
+            [isFavorited]="article.favorited"
+            [articleSlug]="article.slug"
+            [favoritesCount]="article.favoritesCount"
+          ></ngrx-v16-add-to-favorites>
+        </div>
       </div>
 
       <a class="preview-link" [routerLink]="['/article', article.slug]">

@@ -11,6 +11,7 @@ import { Store } from '@ngrx/store';
 import queryString from 'query-string';
 import { combineLatest } from 'rxjs';
 import { environment } from '../../../../environments/environment';
+import { AddToFavoritesComponent } from '../addToFavorites/addToFavorites.component';
 import { ErrorMessageComponent } from '../errorMessage/errorMessage.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { PaginationComponent } from '../pagination/pagination.component';
@@ -29,6 +30,7 @@ import { selectError, selectFeedData, selectIsLoading } from './store/reducers';
     LoadingComponent,
     PaginationComponent,
     TagListComponent,
+    AddToFavoritesComponent,
   ],
 })
 export class FeedComponent implements OnInit, OnChanges {
